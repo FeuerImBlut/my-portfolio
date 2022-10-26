@@ -1,0 +1,10 @@
+a {
+  width: fit-content;
+  padding: 5px;
+  margin: 5px;
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  color: initial;
+}

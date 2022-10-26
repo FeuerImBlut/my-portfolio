@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(7, 7, 7);
+    color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.container {
+    width: 1280px;
+    height: 720px;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 10px solid rgb(0, 145, 145);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+textarea {
+    padding: 5px;
+    border: 5px grey solid;
+    width: 50%;
+    height: auto;
+    font-size: 24px;
+    font-family: inherit;
+    resize: none;
+}
+
+.info {
+    padding-top: 50px;
+    font-size: 20px;
+    white-space: pre-wrap;
+    text-align: center;
+    line-height: 110%;
+}
+
+.keyboard {
+    height: 60%;
+    width: 100%;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: rgb(200, 200, 200);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 0.5%;
+    width: 100%;
+    height: 18%;
+}
+
+.keyboard-key {
+    height: 100%;
+    display: block;
+    border: none;
+    border-radius: 15px;
+    border: 4px silver solid;
+    font-weight: bold;
+    font-size: 26px;
+    color: inherit;
+    flex-basis: calc(100% / 17);
+    transition: ease-out 0.3s;
+}
+
+.keyboard-key.active {
+    color: rgba(184, 0, 0, 0.993);
+    border: 4px solid rgba(184, 0, 0, 0.993);
+    border-radius: 20px;
+    transform: scale3d(0.93, 0.93, 1);
+}
+
+.keyboard-key.caps {
+    color: rgba(184, 0, 0, 0.993);
+    border: 4px solid rgba(184, 0, 0, 0.993);
+}
+
+.Backspace {
+    flex-grow: 0.8;
+}
+
+.Tab {
+    flex-grow: 0.9;
+}
+
+.CapsLock {
+    flex-grow: 0.5;
+}
+
+.Enter {
+    flex-grow: 0.5;
+}
+
+.ShiftLeft {
+    flex-grow: 1;
+}
+
+.ShiftRight {
+    flex-grow: 0.8;
+}
+
+.Space {
+    flex-grow: 1;
+}
+
+.ControlRight {
+    flex-grow: 0.04;
+}
+
+.ControlLeft {
+    flex-grow: 0.04;
+}

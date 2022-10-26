@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <button class="play-prev player-icon" onclick="switchTracks('prev')"></button>
+        <button class="play player-icon" onclick="toggleAudio()"></button>
+        <button class="play-next player-icon" onclick="switchTracks('next')"></button>
+        <div class="track-container">
+          <div class="track-name">Aqua Caelestis</div>
+          <input type="range" name="progress" id="progress">
+        </div>
+        <div class="length">0:00/0:00</div>
+        <button class="mute player-icon" onclick="toggleMute()"></button>
+        <input type="range" name="volume" id="volume" style="background : linear-gradient(to right, CornflowerBlue 0%, CornflowerBlue 50%, white 50%, white 100%)">
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city"/>
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+        <span class="wind"></span>
+        <span class="humidity">
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon" onclick="slideImage(-1)"></button>
+      <button class="slide-next slider-icon" onclick="slideImage(1)"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]"/>
+    </div>
+    <button class="switchLanguage" onclick="toggleLanguage()">Русский</button>
+  </main>
+  <footer class="footer">
+    <button class="change-quote" onclick="getQuotes(requestQuotes);"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+    <div class="info">
+      <p>© 2021</p>
+      <a href="https://rs.school/">The Rolling Scopes School</a>
+      <a href="https://github.com/FeuerImBlut">FeuerImBlut</a>
+  </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

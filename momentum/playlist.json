@@ -1,0 +1,18 @@
+  [
+    {
+        "track": "Aqua Caelestis",
+        "path": "assets\\sounds\\Aqua Caelestis.mp3"
+    },
+    {
+        "track": "Ennio Morricone",
+        "path": "assets\\sounds\\Ennio Morricone.mp3"
+    },
+    {
+        "track": "River Flows In You",
+        "path": "assets\\sounds\\River Flows In You.mp3"
+    },
+    {
+        "track": "Summer Wind",
+        "path": "assets\\sounds\\Summer Wind.mp3"
+    }
+]

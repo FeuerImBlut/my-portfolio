@@ -1,0 +1,387 @@
+.products {
+  position: relative;
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.products.not-found {
+  background-color: var(--color-two);
+  font-size: 3em;
+  border-radius: 1em;
+  height: fit-content;
+}
+
+.products_item {
+  position: relative;
+  display: flex;
+  flex-basis: 23%;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  padding: 0.3em;
+  border: 2px green solid;
+  border: 0.5em solid transparent;
+  transition: ease-out 0.5s;
+  border-radius: 1em;
+  background-color: var(--color-two);
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.products_item-img {
+  margin: 5%;
+  transition: ease 0.5s;
+  width: 90%;
+  border-radius: 1em;
+}
+
+.products_item:hover {
+  cursor: pointer;
+  border-color: var(--color-two);
+  background-color: var(--color-one);
+}
+
+.products_item:hover>.products_item-img {
+  transform: scale(1.1);
+}
+
+.products_item::before {
+  transition: ease-in 0.2s;
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  content: '';
+  width: 20%;
+  aspect-ratio: 1;
+  background-image: url(src/assets/img/icons//shopping-cart.png);
+  background-position: center;
+  background-size: contain;
+  z-index: 10;
+  opacity: 0;
+}
+
+.in-cart.products_item::before {
+  opacity: 0.9;
+}
+.cart {
+  display: block;
+  height: 85%;
+  aspect-ratio: 1;
+  position: relative;
+}
+
+.cart_counter {
+  height: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--color-four);
+  position: absolute;
+  top: 10%;
+  right: 0;
+  color: var(--color-one);
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+}
+.main {
+  position: relative;
+}
+
+.categories {
+  width: 20vw;
+  height: 100%;
+  padding: 1.5em;
+  background-color: var(--color-two);
+  border-radius: 2em;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-sliders,
+.year-sliders  {
+  position: relative;
+  pointer-events: none;
+  width: 100%;
+}
+.year-sliders > input[type=range],
+.price-sliders > input[type="range"] {
+  height: 1em;
+  display: block;
+  margin: 0;
+  border: 1px solid var(--color-one);
+}
+
+input[type="range"]:nth-child(2n) {
+  margin-top: -1em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+}
+
+input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+}
+
+input[type="range"]::-ms-thumb {
+  pointer-events: all;
+}
+
+input[type=range] {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 1em;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: var(--color-one);
+  border: 0.2em solid var(--color-five);
+  border-radius: 50%;
+  cursor: pointer;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-track {
+  border-radius: 10px/100%;
+  height: 5px;
+  border: 1px solid cyan;
+  background-color: #fff;
+}
+
+input[type=range]::-moz-range-thumb {
+  background: #ecf0f1;
+  border: 1px solid cyan;
+  border-radius: 10px/100%;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  pointer-events: none;
+  border-radius: 1em;
+  width: 30%;
+  padding-left: 1em;
+}
+
+.price-numbers,
+.year-numbers {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+height: 1.5em;
+}
+
+#sort {
+  min-width: 80%;
+  height: 3em;
+  font-size: 1.1em;
+  border-radius: 0.5em;
+}
+
+.size-buttons_button,
+.category-buttons_button {
+  height: 2em;
+  min-width: 3em;
+  background-color: var(--color-three);
+  font-size: 1em;
+  border-radius: 0.5em;
+}
+
+.size-buttons_button.active,
+.category-filter button.active {
+  background-color: var(--color-one)
+}
+
+.color-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.color-buttons_button {
+  width: 2em;
+  height: 2em;
+  border: 0.3em solid transparent;
+  border-radius: 50%;
+  background: gray;
+  padding: 0;
+  margin: 0;
+}
+
+.color-buttons_button.active {
+  border: 0.3em solid var(--color-six);
+  filter: blur(0.5px);
+  line-height: 150%;
+}
+
+.color-buttons_button.active::after {
+  content: "+";
+  width: 1.5em;
+  font-size: 2em;
+}
+
+.color-buttons_button:first-child {
+  background-color: #fa1d1d;
+}
+.color-buttons_button:nth-child(2) {
+  background-color: #321cf1;
+}
+.color-buttons_button:nth-child(3) {
+  background-color: #35ff23;
+}
+.color-buttons_button:nth-child(4) {
+  background-color: #f6fa21;
+}
+
+.search {
+  height: 2em;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.reset-filters,
+.clear-local-storage {
+  width: 90%;
+  margin: 0.25em auto;
+  border-radius: 0.75em;
+}
+
+.color-buttons {
+  margin-bottom: 1em;
+}
+
+:root {
+  --color-one: #FFEC00;
+  --color-two: #FEAE16;
+  --color-three: #90CAED;
+  --color-four: #0066AF;
+  --color-five: #002250;
+  --color-six: #010120;
+}
+
+@font-face {
+  font-family: "font-one";
+  src: url(src/assets/fonts//Comic-Cat.otf);
+}
+
+@font-face {
+  font-family: "echo";
+  src: url(src/assets/fonts//EchoRevival.ttf);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "font-one";
+  color: var(--color-six);
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 1.5vh;
+}
+
+.background {
+  z-index: -1;
+  position: fixed;
+  background-image: url(src/assets/img/main//main-background.jpg);
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "echo";
+  font-size: 5em;
+  color: white;
+  text-shadow: 0 0 0.05em var(--color-three);
+}
+
+
+h3 {
+  margin: 0.5em 0;
+}
+
+.header {
+  display: block;
+  margin: 0 auto 1vh;
+  padding: 0.5em;
+  width: 80vw;
+  height: 150px;
+  background-color: var(--color-two);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+  border-radius: 2em;
+}
+
+.logo {
+  filter: blur(0.5px);
+}
+
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+footer {
+  margin-top: 1em;
+  height: 100px;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-two);
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: white;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer p {
+  color: inherit;
+}
+
+footer .rs>img {
+  display: block;
+  height: 2em;
+  filter: invert(100%);
+}
+
+footer .github {
+  margin: 0 auto 0 1em;
+  font-size: 25px;
+  font-weight: 800;
+  color: white;
+}

@@ -1,0 +1,209 @@
+:root {
+    --colour-one: #005555;
+    --colour-two: #069A8E;
+    --colour-three: #A1E3D8;
+    --colour-four: #F7FF93;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--colour-one);
+}
+
+img {
+    display: none;
+    object-fit: contain;
+    height: 100%;
+    position: relative;
+}
+
+p {
+    display: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.container {
+    margin: 7vh auto;
+    width: 70vw;
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5%;
+}
+
+.picture-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bottom-container {
+    display: flex;
+    height: 20%;
+}
+
+.text {
+    flex-grow: 1;
+}
+
+.text>p {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3vw;
+    line-height: 200%;
+    color: var(--colour-four);
+    text-shadow: 0 0 0.5vw var(--colour-two);
+
+}
+
+
+.radio-container {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: end;
+}
+
+label {
+    display: block;
+    width: 4vw;
+    height: 4vw;
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+label > span {
+    border: 0.5vw solid var(--colour-two);
+    width: 70%;
+    height: 70%;
+    display: block;
+    border-radius: 100%;
+    background-color: var(--colour-two);
+    box-sizing: border-box;
+    transition: ease-out 0.2s;
+    box-shadow: 0 0 0.5vw var(--colour-two);
+}
+
+#radio-1:checked~.picture-container>img:nth-child(1),
+#radio-2:checked~.picture-container>img:nth-child(2),
+#radio-3:checked~.picture-container>img:nth-child(3),
+#radio-4:checked~.picture-container>img:nth-child(4) {
+    display: block;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+}
+
+#radio-1:checked~.bottom-container p:nth-child(1),
+#radio-2:checked~.bottom-container p:nth-child(2),
+#radio-3:checked~.bottom-container p:nth-child(3),
+#radio-4:checked~.bottom-container p:nth-child(4) {
+    display: block;
+    animation-name: blur;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+}
+
+.radio-container>label:hover>span {
+    border-color: var(--colour-three);
+    background-color: var(--colour-three);
+
+}
+
+.radio-container>label:active>span {
+    border-color: var(--colour-four);
+}
+
+#radio-1:checked~.bottom-container>.radio-container>label:nth-child(1)>span,
+#radio-2:checked~.bottom-container>.radio-container>label:nth-child(2)>span,
+#radio-3:checked~.bottom-container>.radio-container>label:nth-child(3)>span,
+#radio-4:checked~.bottom-container>.radio-container>label:nth-child(4)>span {
+    background-color: transparent;
+}
+
+#radio-1:checked~.bottom-container>.radio-container>label:nth-child(1):hover>span,
+#radio-2:checked~.bottom-container>.radio-container>label:nth-child(2):hover>span,
+#radio-3:checked~.bottom-container>.radio-container>label:nth-child(3):hover>span,
+#radio-4:checked~.bottom-container>.radio-container>label:nth-child(4):hover>span {
+    background-color: transparent;
+}
+
+@keyframes up {
+    from {
+        opacity: 0.5;
+        transform: translate(0%, 50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes blur {
+    from {
+        transform: translateY(20%);
+        filter: blur(10px);
+        opacity: 0.5;
+    }
+
+    to {
+        filter: blur(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px)  {
+
+    .container {
+        width: 95vw;
+        height: 90vw;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+        gap: 10%;
+    }
+
+    .text {
+        order: 2;
+    }
+
+    .radio-container {
+        width: auto;
+    }
+
+    label {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .text > p {
+        font-size: 6vw;
+        line-height: 100%;
+    }
+
+    .radio-container {
+        justify-content: center;
+    }
+}
