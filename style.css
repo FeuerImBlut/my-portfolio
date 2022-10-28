@@ -1,10 +1,30 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
 a {
-  width: fit-content;
+  width: auto;
   padding: 5px;
   margin: 5px;
   display: block;
   border: 2px solid black;
   border-radius: 10px;
   text-decoration: none;
+  font-family: 'github-font';
   color: initial;
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+}
+
+@font-face {
+  font-family: 'github-font';
+  src: url(./assets/fonts/github-font.ttf);
 }
