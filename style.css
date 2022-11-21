@@ -1,8 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 90vh;
+  position: relative;
+  overflow: hidden;
 }
 
 a {
@@ -22,6 +29,15 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: fit-content;
+}
+
+#canvas {
+  position: absolute;
+  height: 120%;
+  width: 120%;
+  background-color: aqua;
+  /* left: 500px; */
+  z-index: -1;
 }
 
 @font-face {
